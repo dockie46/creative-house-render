@@ -1,44 +1,39 @@
-import { Home, Paintbrush, Box, Eye } from "lucide-react";
+import { MessageCircle, Paintbrush, Eye } from "lucide-react";
 
 const services = [
   {
-    icon: Home,
-    title: "Návrh rodinných domov",
-    description: "Konceptuálne návrhy, dispozičné riešenia a exteriérový dizajn pre moderné rodinné domy.",
+    icon: MessageCircle,
+    title: "Rychlá konzultace",
+    description: "Krátké řešení konkrétního problému – například dispozice místnosti nebo umístění prvků.",
   },
   {
     icon: Paintbrush,
-    title: "Interiérový dizajn",
-    description: "Plánovanie priestorov, rozmiestnenie nábytku, výber materiálov a farebných schém.",
-  },
-  {
-    icon: Box,
-    title: "3D modelovanie",
-    description: "Detailné SketchUp modely pre domy aj interiéry s presným zobrazením priestoru.",
+    title: "Návrh interiéru",
+    description: "Pomoc s uspořádáním prostoru, výběrem materiálů a celkovým řešením.",
   },
   {
     icon: Eye,
-    title: "Vizualizácie projektov",
-    description: "Fotorealistické vizualizácie pre klientov, developerov a prezentácie projektov.",
+    title: "Vizualizace",
+    description: "Ukázka, jak bude prostor reálně vypadat ještě před realizací.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-32 bg-secondary">
+    <section id="services" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <p className="font-body text-sm tracking-widest text-muted-foreground uppercase mb-4">Služby</p>
           <h2 className="font-display text-4xl md:text-5xl font-light text-foreground">
-            Čo <span className="italic">ponúkam</span>
+            Jak vám můžu <span className="italic">pomoct</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-background p-8 border border-border hover:border-stone transition-colors duration-300 group"
+              className="bg-secondary p-8 border border-border hover:border-stone transition-colors duration-300 group"
             >
               <service.icon
                 className="w-8 h-8 text-stone mb-6 group-hover:text-foreground transition-colors duration-300"
