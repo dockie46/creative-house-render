@@ -8,10 +8,10 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error("Prosím vyplňte všetky polia.");
+      toast.error("Prosím vyplňte všechna pole.");
       return;
     }
-    toast.success("Správa bola odoslaná! Ozvem sa vám čo najskôr.");
+    toast.success("Zpráva byla odeslána! Ozvu se vám co nejdříve.");
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -21,15 +21,14 @@ const ContactSection = () => {
         <div className="text-center mb-16">
           <p className="font-body text-sm tracking-widest text-muted-foreground uppercase mb-4">Kontakt</p>
           <h2 className="font-display text-4xl md:text-5xl font-light text-foreground">
-            Napíšte <span className="italic">mi</span>
+            Napište <span className="italic">mi</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="font-body text-sm text-muted-foreground block mb-2">Meno</label>
+              <label className="font-body text-sm text-muted-foreground block mb-2">Jméno</label>
               <input
                 type="text"
                 value={form.name}
@@ -49,7 +48,7 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="font-body text-sm text-muted-foreground block mb-2">Správa</label>
+              <label className="font-body text-sm text-muted-foreground block mb-2">Zpráva</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -62,16 +61,15 @@ const ContactSection = () => {
               type="submit"
               className="w-full bg-foreground text-primary-foreground font-body text-sm tracking-wide py-3 hover:bg-charcoal transition-colors"
             >
-              Odoslať správu
+              Odeslat zprávu
             </button>
           </form>
 
-          {/* Contact info */}
           <div className="space-y-8 lg:pt-4">
             <div className="flex items-start gap-4">
               <Phone className="w-5 h-5 text-stone mt-0.5" strokeWidth={1.5} />
               <div>
-                <p className="font-body text-sm font-medium text-foreground">Telefón</p>
+                <p className="font-body text-sm font-medium text-foreground">Telefon</p>
                 <p className="font-body text-sm text-muted-foreground">+420 123 456 789</p>
               </div>
             </div>
@@ -79,7 +77,7 @@ const ContactSection = () => {
               <Mail className="w-5 h-5 text-stone mt-0.5" strokeWidth={1.5} />
               <div>
                 <p className="font-body text-sm font-medium text-foreground">Email</p>
-                <p className="font-body text-sm text-muted-foreground">info@studioarc.cz</p>
+                <p className="font-body text-sm text-muted-foreground">katerina@urbanova.cz</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

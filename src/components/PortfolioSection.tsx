@@ -8,71 +8,71 @@ import portfolio3d1 from "@/assets/portfolio-3d-1.jpg";
 import portfolioConcept1 from "@/assets/portfolio-concept-1.jpg";
 import heroHouse from "@/assets/hero-house.jpg";
 
-const categories = ["Všetko", "Rodinné domy", "Interiéry", "3D vizualizácie", "Koncepty"];
+const categories = ["Vše", "Interiéry", "Vizualizace", "Koncepty"];
 
 const projects = [
   {
-    image: portfolioHouse1,
-    title: "Rodinný dom – Brno",
-    description: "Moderný jednopodlažný dom s dreveným obkladom",
-    category: "Rodinné domy",
-    tools: "SketchUp, V-Ray",
-  },
-  {
     image: portfolioInterior1,
-    title: "Obývačka – minimalizmus",
-    description: "Svetlý interiér v neutrálnych tónoch",
+    title: "Obývací pokoj – minimalistický styl",
+    description: "Světlý interiér v neutrálních tónech",
     category: "Interiéry",
     tools: "SketchUp, Enscape",
-  },
-  {
-    image: portfolio3d1,
-    title: "3D model – Vila",
-    description: "Technický model dvojpodlažnej vily",
-    category: "3D vizualizácie",
-    tools: "SketchUp",
   },
   {
     image: portfolioInterior2,
-    title: "Kuchyňa – mramorový dizajn",
-    description: "Elegantná kuchyňa s mramorovou doskou",
+    title: "Kuchyně – mramorový design",
+    description: "Elegantní kuchyně s mramorovou deskou",
     category: "Interiéry",
     tools: "SketchUp, V-Ray",
   },
   {
-    image: portfolioHouse2,
-    title: "Rodinný dom – Praha",
-    description: "Dvojpodlažný dom s presklenými fasádami",
-    category: "Rodinné domy",
-    tools: "SketchUp, Enscape",
+    image: portfolioInterior3,
+    title: "Ložnice – skandinávský styl",
+    description: "Minimalistická ložnice ve skandinávském stylu",
+    category: "Interiéry",
+    tools: "SketchUp, V-Ray",
+  },
+  {
+    image: portfolio3d1,
+    title: "3D vizualizace – rodinný dům",
+    description: "Vizualizace prostoru před realizací",
+    category: "Vizualizace",
+    tools: "SketchUp",
+  },
+  {
+    image: portfolioHouse1,
+    title: "Vizualizace – exteriér domu",
+    description: "Moderní rodinný dům s dřevěným obkladem",
+    category: "Vizualizace",
+    tools: "SketchUp, V-Ray",
   },
   {
     image: portfolioConcept1,
-    title: "Koncept – pôdorys a perspektíva",
-    description: "Architektonický koncept s pôdorysom",
+    title: "Koncept – půdorys a perspektiva",
+    description: "Návrh dispozice s vizualizací",
     category: "Koncepty",
     tools: "SketchUp, ruční skica",
   },
   {
-    image: portfolioInterior3,
-    title: "Spálňa – Scandinavian",
-    description: "Minimalistická spálňa v škandinávskom štýle",
-    category: "Interiéry",
-    tools: "SketchUp, V-Ray",
+    image: portfolioHouse2,
+    title: "Vizualizace – prosklená fasáda",
+    description: "Dvoupodlažní dům s prosklenými fasádami",
+    category: "Vizualizace",
+    tools: "SketchUp, Enscape",
   },
   {
     image: heroHouse,
-    title: "Moderná vila – exteriér",
-    description: "Vizualizácia modernej vily pri západe slnka",
-    category: "Rodinné domy",
+    title: "Vizualizace – moderní vila",
+    description: "Realistické zobrazení exteriéru při západu slunce",
+    category: "Vizualizace",
     tools: "SketchUp, V-Ray",
   },
 ];
 
 const PortfolioSection = () => {
-  const [activeCategory, setActiveCategory] = useState("Všetko");
+  const [activeCategory, setActiveCategory] = useState("Vše");
 
-  const filtered = activeCategory === "Všetko"
+  const filtered = activeCategory === "Vše"
     ? projects
     : projects.filter((p) => p.category === activeCategory);
 
@@ -82,11 +82,10 @@ const PortfolioSection = () => {
         <div className="text-center mb-12">
           <p className="font-body text-sm tracking-widest text-muted-foreground uppercase mb-4">Portfólio</p>
           <h2 className="font-display text-4xl md:text-5xl font-light text-foreground">
-            Vybrané <span className="italic">projekty</span>
+            Ukázky <span className="italic">práce</span>
           </h2>
         </div>
 
-        {/* Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -103,7 +102,6 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project) => (
             <div key={project.title} className="group cursor-pointer">
